@@ -86,13 +86,7 @@ class ROS2Quest:
     @staticmethod
     def pose_stamped_to_dict(pose_stamped: PoseStamped) -> dict:
         return {
-            "header": {
-                "stamp": {
-                    "secs": pose_stamped.header.stamp.secs,
-                    "nsecs": pose_stamped.header.stamp.nsecs,
-                },
-                "frame_id": pose_stamped.header.frame_id,
-            },
+            "seq": pose_stamped.header.seq,
             "pose": {
                 "position": {
                     "x": pose_stamped.pose.position.x,
